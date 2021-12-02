@@ -15,6 +15,12 @@ fun.
 This github repo contains my solution for Advent of Code 2021 problems written in
 Python (will try to solve these problems in other languages (if have time)).
 
+The template for solution can be found in `template.py`. Input data and test data
+will be named `data.txt` and `test.txt` (might give the program error if named
+differently).
+
+## Progress
+
 | Days   | Part 1             | Part 2             |
 | ------ | ------------------ | ------------------ |
 | Day 1  | :heavy_check_mark: | :heavy_check_mark: |
