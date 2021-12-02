@@ -1,8 +1,15 @@
-f = open("./data.txt")
-data = [line.split(" ") for line in f.readlines()]
+import os
+import sys
 
 
-def part1():
+def get_data(filename):
+    file_dir = os.path.join(os.getcwd(), filename)
+    f = open(file_dir)
+    data = [line.split(" ") for line in f.readlines()]
+    return data
+
+
+def part1(data):
     x = 0
     y = 0
     for action, steps in data:
@@ -16,7 +23,7 @@ def part1():
     return x * y
 
 
-def part2():
+def part2(data):
     x = 0
     y = 0
     aim = 0
@@ -32,5 +39,17 @@ def part2():
     return x * y
 
 
-print(part1())
-print(part2())
+if __name__ == "__main__":
+
+    filename = "data.txt"
+
+    if len(sys.argv) >= 2:
+        filename = sys.argv[1]
+
+    try:
+        data = get_data(filename)
+        print(part1(data))
+        print(part2(data))
+
+    except Exception as e:
+        print(e)
