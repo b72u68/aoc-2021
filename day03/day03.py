@@ -54,6 +54,7 @@ def part2(data):
 
             if len(d[k]) == 1:
                 break
+
             index_0s = []
             index_1s = []
 
