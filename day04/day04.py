@@ -13,16 +13,16 @@ def get_data(filename):
     plays = [int(num) for num in raw[0].strip("\n").split(",")]
     boards = []
 
+    raw.append("")
     board = []
-    for i in range(1, len(raw)):
-        line = re.sub(r'\s+', ' ', raw[i].strip("\n")).strip(" ")
+    for i in range(2, len(raw)):
+        line = re.sub(r'\s+', ' ', raw[i].strip("\n")).strip()
         if not line:
             if board:
                 boards.append(board)
             board = []
             continue
         board.append([int(num) for num in line.split(" ")])
-    boards.append(board)
 
     return (plays, boards)
 
