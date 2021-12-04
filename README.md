@@ -26,7 +26,7 @@ differently).
 | Day 1  | :heavy_check_mark: | :heavy_check_mark: |
 | Day 2  | :heavy_check_mark: | :heavy_check_mark: |
 | Day 3  | :heavy_check_mark: | :heavy_check_mark: |
-| Day 4  |                    |                    |
+| Day 4  | :heavy_check_mark: | :heavy_check_mark: |
 | Day 5  |                    |                    |
 | Day 6  |                    |                    |
 | Day 7  |                    |                    |
