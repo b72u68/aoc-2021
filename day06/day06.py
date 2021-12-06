@@ -6,9 +6,7 @@ import sys
 def get_data(filename):
     file_dir = os.path.join(os.getcwd(), filename)
     f = open(file_dir)
-
     data = [int(num) for num in f.readline().split(",")]
-
     return data
 
 
