@@ -1,6 +1,5 @@
 import os
 import sys
-import copy
 
 
 # get data from file
