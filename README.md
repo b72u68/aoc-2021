@@ -29,7 +29,7 @@ differently).
 | Day 4  | :heavy_check_mark: | :heavy_check_mark: |
 | Day 5  | :heavy_check_mark: | :heavy_check_mark: |
 | Day 6  | :heavy_check_mark: | :heavy_check_mark: |
-| Day 7  |                    |                    |
+| Day 7  | :heavy_check_mark: | :heavy_check_mark: |
 | Day 8  |                    |                    |
 | Day 9  |                    |                    |
 | Day 10 |                    |                    |
