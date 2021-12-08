@@ -1,6 +1,5 @@
 import os
 import sys
-import math
 
 
 # get data from file
@@ -21,16 +20,16 @@ def part1(data):
 
 # solution for part 2
 def part2(data):
-    mean_ceil = math.ceil(sum(data)/len(data))
-    mean_floor = sum(data)//len(data)
-    result_ceil = 0
-    result_floor = 0
+    mean = sum(data)/len(data)
+    if mean - int(mean) < 0.6:
+        mean = int(mean)
+    else:
+        mean = int(mean) + 1
+    result = 0
     for crab in data:
-        n_ceil = abs(crab - mean_ceil)
-        n_floor = abs(crab - mean_floor)
-        result_ceil += n_ceil*(n_ceil + 1) // 2
-        result_floor += n_floor*(n_floor + 1) // 2
-    return min(result_ceil, result_floor)
+        n = abs(crab - mean)
+        result += n*(n+1)//2
+    return result
 
 
 if __name__ == "__main__":
