@@ -39,15 +39,15 @@ def part1(data):
 
 def sink(data, i, j, visited=set()):
     result = 0
-    if i > 0 and data[i][j] < data[i-1][j] < 9:
-        result += sink(data, i-1, j)
-    if i < len(data)-1 and data[i][j] < data[i+1][j] < 9:
-        result += sink(data, i+1, j)
-    if j > 0 and data[i][j] < data[i][j-1] < 9:
-        result += sink(data, i, j-1)
-    if j < len(data[i])-1 and data[i][j] < data[i][j+1] < 9:
-        result += sink(data, i, j+1)
     if (i, j) not in visited:
+        if i > 0 and data[i][j] < data[i-1][j] < 9:
+            result += sink(data, i-1, j)
+        if i < len(data)-1 and data[i][j] < data[i+1][j] < 9:
+            result += sink(data, i+1, j)
+        if j > 0 and data[i][j] < data[i][j-1] < 9:
+            result += sink(data, i, j-1)
+        if j < len(data[i])-1 and data[i][j] < data[i][j+1] < 9:
+            result += sink(data, i, j+1)
         result += 1
         visited.add((i, j))
     return result
