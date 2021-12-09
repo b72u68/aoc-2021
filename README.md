@@ -31,7 +31,7 @@ differently).
 | Day 6  | :heavy_check_mark: | :heavy_check_mark: |
 | Day 7  | :heavy_check_mark: | :heavy_check_mark: |
 | Day 8  | :heavy_check_mark: | :heavy_check_mark: |
-| Day 9  |                    |                    |
+| Day 9  | :heavy_check_mark: | :heavy_check_mark: |
 | Day 10 |                    |                    |
 | Day 11 |                    |                    |
 | Day 12 |                    |                    |
