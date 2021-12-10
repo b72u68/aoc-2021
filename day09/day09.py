@@ -1,9 +1,5 @@
 import os
 import sys
-import copy
-
-BOLD = '\033[93m'
-ENDB = '\033[0m'
 
 
 # get data from file
@@ -71,8 +67,7 @@ def part2(data):
             if j < len(data[i])-1 and data[i][j+1] <= data[i][j]:
                 is_low = False
             if is_low:
-                copy_data = copy.deepcopy(data)
-                basins.append(sink(copy_data, i, j))
+                basins.append(sink(data, i, j))
 
     basins.sort()
 
