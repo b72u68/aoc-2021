@@ -46,7 +46,7 @@ def print_board(board):
 # solution for part 1
 def part1(data):
     size, coords, folds = data
-    board = [[False] * size[False] for _ in range(size[1])]
+    board = [[False] * size[0] for _ in range(size[1])]
 
     for x, y in coords:
         board[y][x] = True
@@ -84,7 +84,7 @@ def part1(data):
 # solution for part 2
 def part2(data):
     size, coords, folds = data
-    board = [[False] * size[False] for _ in range(size[1])]
+    board = [[False] * size[0] for _ in range(size[1])]
 
     for x, y in coords:
         board[y][x] = True
