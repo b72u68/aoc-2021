@@ -46,65 +46,71 @@ def print_board(board):
 # solution for part 1
 def part1(data):
     size, coords, folds = data
-    board = [[False] * size[0] for _ in range(size[1])]
+    board = [[0] * size[0] for _ in range(size[1])]
 
     for x, y in coords:
-        board[y][x] = True
+        board[y][x] = 1
 
     for dir, coord in folds:
         if dir == "y":
-            new_board = [[False] * len(board[0]) for _ in range(coord)]
+            new_height = max(coord, len(board)-coord-1)
+            new_board = [[0] * len(board[0]) for _ in range(new_height)]
 
-            for i in range(len(new_board)):
-                for j in range(len(new_board[i])):
-                    new_board[i][j] = board[i][j] or board[len(board)-i-1][j]
+            for i in range(len(board)):
+                new_i = new_height-abs(coord-i)
+                for j in range(len(board[i])):
+                    if coord != i and board[i][j]:
+                        new_board[new_i][j] = board[i][j]
 
             board = new_board
 
         else:
-            new_board = [[False] * coord for _ in range(len(board))]
+            new_width = max(coord, len(board[0])-coord-1)
+            new_board = [[0] * new_width for _ in range(len(board))]
 
-            for i in range(len(new_board)):
-                for j in range(len(new_board[i])):
-                    new_board[i][j] = board[i][j] or board[i][len(board[i])-j-1]
+            for i in range(len(board)):
+                for j in range(len(board[i])):
+                    new_j = new_width-abs(coord-j)
+                    if coord != j and board[i][j]:
+                        new_board[i][new_j] = board[i][j]
 
             board = new_board
 
         break
 
-    result = 0
-    for i in range(len(board)):
-        for j in range(len(board[i])):
-            if board[i][j]:
-                result += 1
-
-    return result
+    return sum([sum(row) for row in board])
 
 
 # solution for part 2
 def part2(data):
     size, coords, folds = data
-    board = [[False] * size[0] for _ in range(size[1])]
+    board = [[0] * size[0] for _ in range(size[1])]
 
     for x, y in coords:
-        board[y][x] = True
+        board[y][x] = 1
 
     for dir, coord in folds:
         if dir == "y":
-            new_board = [[False] * len(board[0]) for _ in range(coord)]
+            new_height = max(coord, len(board)-coord-1)
+            new_board = [[0] * len(board[0]) for _ in range(new_height)]
 
-            for i in range(len(new_board)):
-                for j in range(len(new_board[i])):
-                    new_board[i][j] = board[i][j] or board[len(board)-i-1][j]
+            for i in range(len(board)):
+                new_i = new_height-abs(coord-i)
+                for j in range(len(board[i])):
+                    if coord != i and board[i][j]:
+                        new_board[new_i][j] = board[i][j]
 
             board = new_board
 
         else:
-            new_board = [[False] * coord for _ in range(len(board))]
+            new_width = max(coord, len(board[0])-coord-1)
+            new_board = [[0] * new_width for _ in range(len(board))]
 
-            for i in range(len(new_board)):
-                for j in range(len(new_board[i])):
-                    new_board[i][j] = board[i][j] or board[i][len(board[i])-j-1]
+            for i in range(len(board)):
+                for j in range(len(board[i])):
+                    new_j = new_width-abs(coord-j)
+                    if coord != j and board[i][j]:
+                        new_board[i][new_j] = board[i][j]
 
             board = new_board
 
