@@ -1,6 +1,5 @@
 import os
 import sys
-import math
 
 
 # get data from file
@@ -8,6 +7,7 @@ def get_data(filename):
     file_dir = os.path.join(os.getcwd(), filename)
     f = open(file_dir)
 
+    # process data here
     data = f.readlines()
 
     return data
