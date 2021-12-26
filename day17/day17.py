@@ -1,6 +1,5 @@
 import os
 import sys
-from math import sqrt
 
 
 # get data from file
